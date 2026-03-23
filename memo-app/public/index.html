@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Memo</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background decorators -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <main class="memo-container glass-panel">
+        <header>
+            <h1 class="memo-title">📝 퀵 메모</h1>
+            <p class="memo-subtitle">간단하고 우아하며 안전합니다.</p>
+        </header>
+        
+        <div class="input-area">
+            <textarea id="memoInput" placeholder="여기에 메모를 작성해 보세요..." spellcheck="false"></textarea>
+            <div id="statusMessage" class="status-message"></div>
+        </div>
+
+        <div class="controls">
+            <button id="btnSave" class="btn btn-primary" onclick="saveMemo()">
+                <span class="btn-icon">💾</span> 저장
+            </button>
+            <button id="btnLoad" class="btn btn-secondary" onclick="loadMemoList()">
+                <span class="btn-icon">📂</span> 불러오기
+            </button>
+            <button id="btnDelete" class="btn btn-danger" onclick="toggleDeleteMode()">
+                <span class="btn-icon">🗑️</span> 삭제
+            </button>
+        </div>
+
+        <div id="memoListWrapper" class="memo-list-wrapper hidden">
+            <h3 class="list-title">저장된 메모 목록</h3>
+            <p id="deleteInstruction" class="delete-instruction hidden">삭제할 메모를 클릭하세요</p>
+            <div id="memoList" class="memo-list"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
